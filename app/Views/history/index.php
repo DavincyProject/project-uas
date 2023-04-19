@@ -2,44 +2,67 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container py-3"></div>
-<div class="row">
-    <div class="col-md-8 mx-auto">
-        <h4>History Pembelian</h4>
-        <div class="card">
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr class="align-baseline">
-                            <th scope="col">No.</th>
-                            <th scope="col">Wisata</th>
-                            <th scope="col">Tiket Anak-anak</th>
-                            <th scope="col">Tiket Dewasa</th>
-                            <th scope="col">Keberangkatan</th>
-                            <th scope="col">Kedatangan</th>
-                            <th scope="col">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+<div class="flex justify-center align-center">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <h4 class="font-bold mb-3 text-center">History Pembelian</h4>
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        No.
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Nama Wisata
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Tiket Anak-anak
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Tiket Dewasa
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Keberangkatan
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Kedatangan
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Total
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $no = 1;
+                foreach ($pesan as $data) :
+                ?>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <?= $no; ?>
+                        </th>
+                        <td class="px-6 py-4">
+                            <?= $data->nama_wisata; ?>
+                        </td>
+                        <td class="px-6 py-4">
+                            <?= $data->qty_anak; ?>
+                        </td>
+                        <td class="px-6 py-4">
+                            <?= $data->qty_dewasa; ?>
+                        </td>
+                        <td class="px-6 py-4">
+                            <?= $data->tgl_berangkat; ?>
+                        </td>
+                        <td class="px-6 py-4">
+                            <?= $data->tgl_datang; ?>
+                        </td>
+                        <td class="px-6 py-4">
+                            Rp. <?= number_format($data->total, 0, ',', '.'); ?>
+                        </td>
+                    </tr>
 
-                        <?php $no = 1;
-                        foreach ($pesan as $data) :
-                        ?>
-                            <tr class=" align-baseline">
-                                <th scope="row"><?= $no; ?></th>
-                                <td><?= $data->nama_wisata; ?></td>
-                                <td><?= $data->qty_anak; ?></td>
-                                <td><?= $data->qty_dewasa; ?></td>
-                                <td><?= $data->tgl_berangkat; ?></td>
-                                <td><?= $data->tgl_datang; ?></td>
-                                <td>Rp. <?= number_format($data->total, 0, ',', '.'); ?></td>
-                            </tr>
-                        <?php $no++;
-                        endforeach ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                <?php $no++;
+                endforeach ?>
+            </tbody>
+        </table>
     </div>
 </div>
 
