@@ -2,53 +2,57 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container-fluid px-0 py-0">
-    <div class="row">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <?php foreach ($wisata as $data) : ?>
-                    <div class="carousel-item active">
-                        <img src="<?= base_url('foto/' . $data->foto); ?>" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="<?= $data->nama_wisata; ?>">
-                    </div>
-                <?php endforeach ?>
+
+
+
+<div id="controls-carousel" class="relative w-full p-8" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <!-- Item 1 -->
+        <?php foreach ($wisata as $data) : ?>
+            <div class="hidden duration-700 ease-in-out border border-gray-200 rounded-lg shadow" data-carousel-item>
+                <img src="<?= base_url('foto/' . $data->foto); ?>" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
+        <?php endforeach ?>
     </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 left-8 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 right-8 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
 </div>
 
-<div class="container-fluid py-3">
-    <div class="row">
-        <div class="col-md-12 mb-5">
-            <h3 class="text-center">Selamat Datang di Tick.id</h3>
-        </div>
-    </div>
+<div class="p-8 text-center">
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Selamat Datang Di Tick.ID</h1>
+    <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Daftar Wisata Yang tersedia Saat ini</p>
+</div>
 
-    <div class="row">
-        <h3 class="mx-5">Wisata yang tersedia</h3>
-        <div class="col d-flex justify-content-evenly flex-wrap">
-            <?php foreach ($wisata as $data) : ?>
-                <div class="card mt-4" style="width: 18rem;">
-                    <img src="<?= base_url('foto/' . $data->foto); ?>" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;" alt="<?= $data->nama_wisata; ?>">
-                    <div class="card-body">
-                        <h5 class="card-title text-center"><?= $data->nama_wisata; ?></h5>
-                        <p class="card-text text-center"><?= $data->deskripsi; ?></p>
-                    </div>
+<div class="flex justify-center align-center">
+    <div class="p-8 flex flex-row justify-center gap-5 flex-wrap">
+        <?php foreach ($wisata as $data) : ?>
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+
+                <img class="rounded-t-lg object-cover h-[170px] w-[300px]" src="<?= base_url('foto/' . $data->foto); ?>" alt="" />
+
+                <div class="p-5">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?= $data->nama_wisata; ?></h5>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><?= $data->deskripsi; ?></p>
                 </div>
-            <?php endforeach ?>
-        </div>
+            </div>
+        <?php endforeach ?>
     </div>
 </div>
-
-
-
 
 <?= $this->endSection(); ?>
