@@ -21,9 +21,6 @@
                         Bayar
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Verifikasi Pembayaran
-                    </th>
-                    <th scope="col" class="px-6 py-3">
                         Status
                     </th>
                 </tr>

@@ -15,7 +15,7 @@
 </div>
 
 
-<div class="container mx-auto">
+<div class="container mx-10">
     <?= $this->renderSection('content'); ?>
     <div class="relative overflow-x-auto">
         <h5 class="text-center font-bold mb-5 ">List Wisata Yang Didaftarkan</h5>
