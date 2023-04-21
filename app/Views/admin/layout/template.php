@@ -1,13 +1,12 @@
-<!doctype html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>back End Tiket Wisata</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Tick.id</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
+    <style type="text/tailwindcss">
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
         body {
@@ -17,55 +16,74 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container">
-            <a class="navbar-brand" href="#">Tick.id</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="<?= base_url('admin'); ?>">Home</a>
-                    <a class="nav-link" href="<?= base_url('admin/wisata'); ?>">Wisata</a>
-                    <a class="nav-link" href="<?= base_url('admin/petugas/index'); ?>">Petugas</a>
-                    <a class="nav-link" href="<?= base_url('admin/member'); ?>">Member</a>
-                    <a class="nav-link" href="<?= base_url('admin/pesan'); ?>">Order Tiket</a>
-                    <a class="nav-link" href="<?= base_url('admin/pesan/settle'); ?>">Laporan Tiket</a>
-                    <a class="nav-link" href="<?= base_url('admin/login/keluar'); ?>">Logout</a>
-                </div>
+
+
+    <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a class="flex items-center">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Tick.ID</span>
+            </a>
+            <div class="flex md:order-2">
+                <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                    <a href="<?= base_url('admin/login/keluar'); ?>">Keluar</a>
+                </button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="<?= base_url('admin'); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/wisata'); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Wisata
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/petugas/index'); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Daftar Petugas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/member'); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Member
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/pesan'); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Status Tiket
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('admin/pesan/settle'); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                            Laporan Tiket
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container py-3">
-        <div class="row">
-            <div class="col-md-8 mb-5">
-                <?= $this->renderSection('content'); ?>
-            </div>
-            <div class="col-md-4">
-                <h5>List Wisata Yang Terdaftar</h5>
-                <?php
-                $db = \Config\Database::connect();
-                $builder = $db->table('wisata')->get()->getResult();
-                ?>
-                <ul class="list-group list-group-flush">
-                    <?php foreach ($builder as $data) : ?>
-                        <li class="list-group-item"><?= $data->nama_wisata; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        </div>
+    <div class="container mx-auto mt-[6rem]">
+        <?= $this->renderSection('content'); ?>
     </div>
 
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <div class="col-md-12 bg-dark text-white py-2">
-                <h6 class="text-center">&copy; 2023 Tick.id</h6>
-            </div>
-        </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </ <?= $this->renderSection('content'); ?> <footer class="bg-white dark:bg-gray-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 Tick.ID™. All Rights Reserved.</span>
+    </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 </body>
 
 </html>

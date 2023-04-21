@@ -45,7 +45,7 @@ class Petugas extends BaseController
         ];
 
         $pesan = [
-            'nama' => ['required' => 'Nama wisata tidak boleh kosong'],
+            'nama' => ['required' => 'Nama Petugas tidak boleh kosong'],
             'email' => [
                 'required' => 'Email tidak boleh kosong',
                 'valid_email' => 'Format Email tidak sesuai',
@@ -56,7 +56,7 @@ class Petugas extends BaseController
             ],
             'uppassword' => [
                 'required' => 'Password tidak boleh kosong',
-                'matches' => 'Password harus sama seperti password baru'
+                'matches' => 'Password harus sama '
             ],
         ];
 

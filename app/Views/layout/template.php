@@ -61,12 +61,9 @@
                                     <li>
                                         <a href="<?= base_url('wisata/bayar'); ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Cek Pembayaran</a>
                                     </li>
-                                    <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Update Password</a>
-                                    </li>
                                 </ul>
                                 <div class="py-1">
-                                    <a href="<?= base_url('login/keluar'); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Keluar</a>
+                                    <a href="<?= base_url('login/keluar'); ?>" class="block px-4 py-2 text-sm text-red-700 hover:bg-red-100 dark:hover:bg-red-600 dark:text-red-400 dark:hover:text-red">Keluar</a>
                                 </div>
                             </div>
                         </li>
