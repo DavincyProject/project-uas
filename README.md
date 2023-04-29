@@ -1,3 +1,14 @@
+# HOW TO TEST RESTAPI WITH POSTMAN?
+<ul>
+#End Point for Users
+<li>Register : POST, http://localhost:8080/login/save</li>
+<p>Needed Key:<br> nama, kelamin (value : laki-laki / perempuan), telepon, email, password</p>
+
+<li>Login : POST, http://localhost:8080/login/proses </li>
+<p>Needed Key:<br> email, password</p>
+</ul>
+
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
