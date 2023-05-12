@@ -1,12 +1,30 @@
-# HOW TO TEST RESTAPI WITH POSTMAN?
-<ul>
-#End Point for Users
-<li>Register : "Method : POST", URL : http://localhost:8080/login/save</li>
-<p>Needed Key:<br> nama, kelamin (value : laki-laki / perempuan), telepon, email, password</p>
+## API Reference
 
-<li>Login : POST, http://localhost:8080/login/proses </li>
-<p>Needed Key:<br> email, password</p>
-</ul>
+#### HOW TO TEST REST API WITH POSTMAN?
+
+### End Point for Users Register
+```http
+  POST http://localhost:8080/login/save
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `nama`    | `string` | **Required**. masukan nama |
+| `kelamin`  | `laki-laki / perempuan` | **Required**. masukan jenis kelamin dengan pilihan salah satu gender |
+| `telepon`    | `string` | **Required**. masukan no telepon |
+| `email`    | `string` | **Required**. masukan email |
+| `password`    | `string` | **Required**. masukan password |
+
+#### End Point for Users Login
+
+```http
+  POST http://localhost:8080/login/proses
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `email`    | `string` | **Required**. masukan email |
+| `password`    | `string` | **Required**. masukan password |
 
 
 # CodeIgniter 4 Application Starter
