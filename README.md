@@ -7,13 +7,13 @@
   POST http://localhost:8080/login/save
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `nama`    | `string` | **Required**. masukan nama |
-| `kelamin`  | `laki-laki / perempuan` | **Required**. masukan jenis kelamin dengan pilihan salah satu gender |
-| `telepon`    | `string` | **Required**. masukan no telepon |
-| `email`    | `string` | **Required**. masukan email |
-| `password`    | `string` | **Required**. masukan password |
+| Parameter   | Type                    | Description                                                           |
+| :--------   | :-------                | :-------------------------                                            |
+| `nama`      | `string`                | **Required**. masukan nama                                            |
+| `kelamin`   | `laki-laki / perempuan` | **Required**. masukan jenis kelamin dengan pilihan salah satu gender  |
+| `telepon`   | `string`                | **Required**. masukan no telepon                                      |
+| `email`     | `string`                | **Required**. masukan email                                           |
+| `password`  | `string`                | **Required**. masukan password                                        |
 
 #### End Point for Users Login
 
@@ -21,11 +21,37 @@
   POST http://localhost:8080/login/proses
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `email`    | `string` | **Required**. masukan email |
-| `password`    | `string` | **Required**. masukan password |
+| Parameter   | Type     | Description                        |
+| :--------   | :------- | :--------------------------------  |
+| `email`     | `string` | **Required**. masukan email        |
+| `password`  | `string` | **Required**. masukan password     |
 
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/DavincyProject/project-uas.git
+```
+
+Go to the project directory
+
+```bash
+  cd project-uas
+```
+
+Start the server
+
+```bash
+  php spark serve
+```
+
+Open in your browser
+
+```bash
+https://localhost:3000
+```
 
 # CodeIgniter 4 Application Starter
 
