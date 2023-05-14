@@ -29,6 +29,9 @@
                     <th scope="col" class="px-6 py-3">
                         Total
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        Cetak Tiket
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -56,6 +59,11 @@
                         </td>
                         <td class="px-6 py-4">
                             Rp. <?= number_format($data->total, 0, ',', '.'); ?>
+                        </td>
+                        <td class="px-6 py-4">
+                            <a href="<?= base_url('wisata/cetakTiket/' . $data->id_pesan); ?>" class="px-3 py-2 text-xs font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                Cetak Tiket
+                            </a>
                         </td>
                     </tr>
 
