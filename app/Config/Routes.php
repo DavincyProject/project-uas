@@ -42,6 +42,8 @@ $routes->get('wisata/pesan/(:segment)', 'Wisata::pesan/$1');
 $routes->post('wisata/proses', 'Wisata::proses');
 $routes->get('wisata/bayar', 'Wisata::bayar');
 $routes->get('wisata/cek/(:segment)', 'Wisata::cek/$1');
+$routes->get('wisata/cetakTiket/(:segment)', 'Wisata::cetakTiket/$1');
+
 
 $routes->get('history', 'History::index');
 

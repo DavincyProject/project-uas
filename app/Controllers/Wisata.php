@@ -1,10 +1,16 @@
 <?php
 
+
+
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\PesanModel;
 use App\Models\WisataModel;
+
+//menggunakan libraries Dompdf untuk cetak tiket
+use App\Libraries\Dompdf_lib;
+use App\Models\UserModel;
 
 use function PHPUnit\Framework\returnSelf;
 
@@ -12,12 +18,16 @@ class Wisata extends BaseController
 {
     protected $wisata;
     protected $pesan;
+    protected $users;
+    protected $dompdf;
 
     public function __construct()
     {
         helper(['form', 'url']);
         $this->wisata = new WisataModel();
         $this->pesan = new PesanModel();
+        $this->users = new UserModel();
+        $this->dompdf = new Dompdf_lib();
     }
 
     public function index()
@@ -166,5 +176,18 @@ class Wisata extends BaseController
         // } else if ($hasil['status_code'] == 404) {
         //     $status = "Tagihan Belum Dibuat";
         // }
+    }
+
+    public function cetakTiket($id_pesan)
+    {
+        $data['pesan'] = $this->pesan->join('wisata', 'wisata.id_wisata = pesan.id_wisata')->where(['id_pesan' => $id_pesan, 'id' => session()->get('id_users')])->first();
+        if (!$data['pesan']) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Tiket tidak ditemukan!');
+        }
+
+        $data['user'] = $this->users->find(session()->get('id_users'));
+
+        $html = view('report/cetak_tiket', $data);
+        $this->dompdf->generate($html, 'tiket_' . $data['pesan']->id_pesan);
     }
 }

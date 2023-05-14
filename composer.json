@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
+        "dompdf/dompdf": "^2.0",
         "midtrans/midtrans-php": "^2.5"
     },
     "require-dev": {
@@ -26,7 +27,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Support\\": "tests/_support"
+            "Tests\\Support\\": "tests/_support",
+            "Dompdf\\": "vendor/dompdf/dompdf/src/"
         }
     },
     "scripts": {
