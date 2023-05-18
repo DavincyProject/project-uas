@@ -7,7 +7,7 @@
 </h1>
 
 <div class="flex align-center justify-center ">
-    <div class="max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="max-w-2gi txl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <form method="POST" action="<?= base_url('admin/wisata/update'); ?>" enctype="multipart/form-data">
             <?= csrf_field(); ?>
             <input type="hidden" name="kode" value="<?= $cari->id_wisata; ?>">
