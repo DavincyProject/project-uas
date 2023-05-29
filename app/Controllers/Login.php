@@ -12,7 +12,7 @@ class Login extends BaseController
 
     public function __construct()
     {
-        helper(['form', 'url']);
+
         $this->users = new UserModel();
     }
 

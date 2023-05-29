@@ -19,4 +19,10 @@ class Member extends BaseController
         $data['users'] = $this->users->findAll();
         return view('admin/users/index', $data);
     }
+
+    public function delete($id)
+    {
+        $this->users->delete($id);
+        return redirect()->to('admin/member');
+    }
 }

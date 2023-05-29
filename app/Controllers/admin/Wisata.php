@@ -12,7 +12,6 @@ class Wisata extends BaseController
     public function __construct()
     {
         session();
-        helper(['form', 'url']);
         $this->wisata = new WisataModel();
     }
 
@@ -81,6 +80,7 @@ class Wisata extends BaseController
 
     public function update()
     {
+        //mengambil data dari tabel 
         $id = $this->request->getVar('kode');
         $nama = $this->request->getVar('nama');
         $des = $this->request->getVar('des');
@@ -88,6 +88,7 @@ class Wisata extends BaseController
         $foto = $this->request->getFile('foto');
         $foto->move(WRITEPATH . '../public/foto');
 
+        //dikirimkan kembali ke dalam view admin/wisata untuk ditampilkan
         $data = [
             'id_wisata' => $id,
             'nama_wisata' => $nama,
@@ -102,6 +103,14 @@ class Wisata extends BaseController
 
     public function delete($id)
     {
+        // Mengambil data wisata yang akan dihapus
+        $wisata = $this->wisata->find($id);
+
+        // Menghapus foto di dalam folder public/foto sesuai dengan id
+        if (!empty($wisata->foto)) {
+            unlink(WRITEPATH . '../public/foto/' . $wisata->foto);
+        }
+
         $this->wisata->delete($id);
         return redirect()->to('admin/wisata');
     }
