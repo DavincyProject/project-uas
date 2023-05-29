@@ -106,7 +106,11 @@ class Wisata extends BaseController
         // Mengambil data wisata yang akan dihapus
         $wisata = $this->wisata->find($id);
 
+<<<<<<< HEAD
         // Menghapus foto di dalam folder public/foto sesuai dengan id
+=======
+        // Menghapus foto di dalam folder public/foto sesuai dengan id jika ada
+>>>>>>> 22bec8a1574e71e3d3aeff634cb781dfd52587ff
         if (!empty($wisata->foto)) {
             unlink(WRITEPATH . '../public/foto/' . $wisata->foto);
         }

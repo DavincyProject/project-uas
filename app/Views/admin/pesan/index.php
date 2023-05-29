@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <h1 class="text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-    Lihat Status Pesanan Yang Berlangsung
+    Lihat Status Pesanan Yang Pending
 </h1>
 
 
@@ -13,6 +13,9 @@
             <tr>
                 <th scope="col" class="px-6 py-3">
                     No.
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Nama Pembeli
                 </th>
                 <th scope="col" class="px-6 py-3">
                     Tujuan Wisata
@@ -33,6 +36,9 @@
                     <th scope="row" class=" px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <?= $no; ?>
                     </th>
+                    <td class="px-6 py-4">
+                        <?= $data->nama_users; ?>
+                    </td>
                     <td class="px-6 py-4">
                         <?= $data->nama_wisata; ?>
                     </td>
