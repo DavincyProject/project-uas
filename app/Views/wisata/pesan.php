@@ -10,6 +10,7 @@
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 Harga Tiket : <?= number_format($wisata->harga, 0, ',', '.'); ?>
             </p>
+            <h5 class="text-red-700 font-bold text-xs mb-2">Untuk harga tiket anak setengah harga dari tiket dewasa</h5>
 
             <?php $validation = \Config\Services::validation() ?>
             <form method="POST" action="<?= base_url('wisata/proses'); ?>">
