@@ -12,7 +12,6 @@ class Login extends BaseController
 
     public function __construct()
     {
-
         $this->users = new UserModel();
     }
 

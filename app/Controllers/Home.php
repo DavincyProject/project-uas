@@ -15,7 +15,7 @@ class Home extends BaseController
 
     public function index()
     {
-        $data['wisata'] = $this->wisata->limit(3)->findAll();
+        $data['wisata'] = $this->wisata->findAll();
         return view('home', $data);
     }
 }

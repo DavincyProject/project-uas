@@ -29,23 +29,27 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->group('user', function ($routes) {
+    $routes->get('/', 'Home::index');
 
-$routes->get('/login', 'Login::index');
-$routes->get('/login/register', 'Login::register');
-$routes->post('/login/save', 'Login::save');
-$routes->post('/login/proses', 'Login::proses');
-$routes->get('login/keluar', 'Login::keluar');
+    $routes->get('/login', 'Login::index');
+    $routes->get('/login/register', 'Login::register');
+    $routes->post('/login/save', 'Login::save');
+    $routes->post('/login/proses', 'Login::proses');
+    $routes->get('login/keluar', 'Login::keluar');
 
-$routes->get('wisata', 'Wisata::index');
-$routes->get('wisata/pesan/(:segment)', 'Wisata::pesan/$1');
-$routes->post('wisata/proses', 'Wisata::proses');
-$routes->get('wisata/bayar', 'Wisata::bayar');
-$routes->get('wisata/cek/(:segment)', 'Wisata::cek/$1');
-$routes->get('wisata/cetakTiket/(:segment)', 'Wisata::cetakTiket/$1');
+    $routes->get('wisata', 'Wisata::index');
+    $routes->get('wisata/pesan/(:segment)', 'Wisata::pesan/$1');
+    $routes->post('wisata/proses', 'Wisata::proses');
+    $routes->get('wisata/bayar', 'Wisata::bayar');
+    $routes->get('wisata/cek/(:segment)', 'Wisata::cek/$1');
+    $routes->get('wisata/cetakTiket/(:segment)', 'Wisata::cetakTiket/$1');
 
 
-$routes->get('history', 'History::index');
+    $routes->get('history', 'History::index');
+});
+
+
 
 $routes->group('admin', function ($routes) {
     $routes->add('/', 'admin\Home::index');
